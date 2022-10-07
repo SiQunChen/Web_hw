@@ -37,10 +37,31 @@
         del{
           background-color: pink;
         }
+        #nav li{
+            display: inline;
+            line-height: 40px;
+            color: #000;
+            padding: 100px 100px;
+        }
+        #nav{
+            margin: 50px auto;
+            background: green;
+        }
+        #nav a:hover{
+          background-color: blue;
+        }
     </style>
 </head>
 <body>
     <div>
+      <nav>
+        <ul id=nav>
+            <li style='width:25%'><a href="https://www.google.com.tw/?hl=zh_TW">Google</a></li>
+            <li style='width:25%'><a href="https://www.youtube.com/">Youtube</a></li>
+            <li style='width:25%'><a href="https://www.ntut.edu.tw/">Taipei Tech</a></li>
+            <li style='width:25%'><a href="https://www.netflix.com/tw/">Netflix</a></li>
+        </ul>
+      </nav>
         <div style="position: relative;">
             <img src="1.png" style="width:250px;height:150px;"/>
             <img src="2.png" style="width:250px;height:150px;"/>
