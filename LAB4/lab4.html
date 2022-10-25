@@ -22,7 +22,8 @@
   opacity: 0;
   position: absolute;
   top: 85%;
-  left: 35%;
+  left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
@@ -45,19 +46,14 @@
 </style>
 </head>
 <body>
-
-<h2>Opacity with Box</h2>
-<p>Hover over the image to see the effect.</p>
-
-<div class="container">
-  <img src="a.jpeg" alt="Avatar" class="image" style="width:70%;border-radius:50%">
-  <map name="workmap">
-    <area shape="circle" coords="337,300,44" alt="face" href="lab3.html">
-  </map>
-  <div class="middle">
-    <div class="text">AAAAAA Prince</div>
+  <div class="container">
+    <img src="a.jpeg" alt="Avatar" class="image" style="width:100%" usemap="#workmap">
+      <div class="middle">
+        <div class="text">AAAAAA Prince</div>
+      </div>
   </div>
-</div>
-
+  <map name="workmap">
+    <area shape="circle" coords="371.5,288.5,235" alt="face" href="a.jpeg">
+  </map>
 </body>
 </html>
