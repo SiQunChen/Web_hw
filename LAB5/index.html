@@ -18,7 +18,7 @@
 <body>
     <!-- Write your Html code here -->
     <script src="./script.js"></script>
-    <table>
+    <table id="table">
       <tr>
         <th>Math</th>
         <th>English</th>
@@ -43,11 +43,11 @@
     <input type="button" onclick="chgBorder(10)" value="10px">
     <input type="button" onclick="chgBorder(20)" value="20px"><br>
     <p>Change The Table Color</p>
-    <input type="button" onclick="chgColor(green)" style="background-color:green">
-    <input type="button" onclick="chgColor(blue)" style="background-color:blue">
-    <input type="button" onclick="chgColor(purple)" style="background-color:purple">
-    <input type="button" onclick="chgColor(orange)" style="background-color:orange"><br>
-    <input type="button" onclick="chgColor(blue)" value="Reset">
+    <input type="button" onclick="chgColor('green')" style="background-color:green">
+    <input type="button" onclick="chgColor('blue')" style="background-color:blue">
+    <input type="button" onclick="chgColor('purple')" style="background-color:purple">
+    <input type="button" onclick="chgColor('orange')" style="background-color:orange"><br>
+    <input type="button" onclick="reset()" value="Reset">
 </body>
 
 </html>
