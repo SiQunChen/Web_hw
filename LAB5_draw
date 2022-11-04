@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var c = document.getElementById("myCanvas");
+            var circle = document.getElementById("myCanvas");
+            var line = document.getElementById("myCanvas");
+            var line = line.getContext("2d");
+            var circle = circle.getContext("2d");
+            var c = c.getContext("2d");
+            var ctx = canvas.getContext("2d");
+            var grd_red = ctx.createLinearGradient(0, 0, 200, 0);
+            var grd_blue = ctx.createLinearGradient(0, 0, 200, 0);
+            grd_red.addColorStop(1, "red");
+            grd_red.addColorStop(0, "white");
+            grd_blue.addColorStop(0, "rgba(0,0,200,0.5)");
+            grd_blue.addColorStop(1, "white");
+            ctx.fillStyle = grd_red;
+            ctx.fillRect (0,0,150,75);
+            ctx.fillStyle = grd_blue;
+            ctx.fillRect (50,30,150,75);
+            c.font = "25px Arial";
+            c.fillStyle = "yellow";
+            c.fillText("Overlap", 50, 60);
+            circle.beginPath();
+            circle.arc(200, 30, 15, Math.PI, 0.5 * Math.PI);
+            circle.lineWidth = 2;
+            circle.strokeStyle = "purple";
+            circle.stroke();
+            line.strokeStyle="green";
+            line.beginPath();
+            line.moveTo(0, 80);
+            line.lineTo(45, 80);
+            line.lineTo(45, 110);
+            line.lineTo(200, 110);
+            line.stroke();
+        </script>
+    </body>
+</html>
