@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+
+var redGamePiece, blueGamePiece, yellowGamePiece;
+var R_flag = 0;
+var B_xflag = 0, B_yflag = 0;
+var Y_xflag = 0, Y_yflag = 0;
+
+function startGame() {
+    redGamePiece = new component(75, 75, "red", 10, 10);
+    yellowGamePiece = new component(75, 75, "yellow", 50, 60);
+    blueGamePiece = new component(75, 75, "blue", 150, 0);
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;
+    this.update = function(){
+        ctx = myGameArea.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+}
+
+function updateGameArea() {
+    myGameArea.clear();
+    if(redGamePiece.x == 405){
+      R_flag = 1;
+    }
+    if(redGamePiece.x == 0){
+      R_flag = 0;
+    }
+    if(R_flag == 0){
+      redGamePiece.x += 1;
+    }
+    else{
+      redGamePiece.x -= 1;
+    }
+    if(yellowGamePiece.x == 405){
+      Y_xflag = 1;
+    }
+    if(yellowGamePiece.x == 0){
+      Y_xflag = 0;
+    }
+    if(Y_xflag == 0){
+      yellowGamePiece.x += 1;
+    }
+    else{
+      yellowGamePiece.x -= 1;
+    }
+    if(yellowGamePiece.y == 195){
+      Y_yflag = 1;
+    }
+    if(yellowGamePiece.y == 0){
+      Y_yflag = 0;
+    }
+    if(Y_yflag == 0){
+      yellowGamePiece.y += 1;
+    }
+    else{
+      yellowGamePiece.y -= 1;
+    }
+    if(blueGamePiece.x == 405){
+      B_xflag = 1;
+    }
+    if(blueGamePiece.x == 0){
+      B_xflag = 0;
+    }
+    if(B_xflag == 0){
+      blueGamePiece.x += 1;
+    }
+    else{
+      blueGamePiece.x -= 1;
+    }
+    if(blueGamePiece.y == 195){
+      B_yflag = 1;
+    }
+    if(blueGamePiece.y == 0){
+      B_yflag = 0;
+    }
+    if(B_yflag == 0){
+      blueGamePiece.y += 1;
+    }
+    else{
+      blueGamePiece.y -= 1;
+    }
+    redGamePiece.update();
+    yellowGamePiece.update();
+    blueGamePiece.update();
+}
+</script>
+<p>The three components moves by changing the x- and y-coordinates on every update.</p>
+</body>
+</html>
